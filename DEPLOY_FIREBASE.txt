@@ -1,0 +1,26 @@
+РАЗВЕРТЫВАНИЕ НА FIREBASE HOSTING
+
+Вариант через Firebase Console и Cloud Shell:
+1. Создайте или откройте проект на https://console.firebase.google.com/
+2. Скопируйте Project ID в настройках проекта.
+3. Откройте Cloud Shell из консоли Firebase.
+4. Загрузите ZIP-архив в Cloud Shell и распакуйте его.
+5. Перейдите в папку с firebase.json.
+6. Выполните команду:
+   bash deploy.sh ВАШ_PROJECT_ID
+
+Вариант с локального компьютера:
+1. Установите Node.js и Firebase CLI:
+   npm install -g firebase-tools
+2. Авторизуйтесь:
+   firebase login
+3. В папке с firebase.json выполните:
+   bash deploy.sh ВАШ_PROJECT_ID
+
+СТРУКТУРА АРХИВА
+- public/ — готовые файлы сайта;
+- firebase.json — настройки Firebase Hosting;
+- .firebaserc — алиас проекта, автоматически обновляется deploy.sh;
+- deploy.sh — запуск деплоя одной командой.
+
+В firebase.json уже настроены public-каталог, чистые URL, завершающие слеши, пользовательская 404-страница и кеширование статических ресурсов.
